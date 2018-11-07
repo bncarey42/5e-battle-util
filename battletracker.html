@@ -18,8 +18,9 @@
         
         function createActorBlock(actorIndex) {
           /* <span>
-              <input type="checkbox" name="nat20" value="">
+              <input type="checkbox" name="pc" value=""> 
               <input type="number" name="initiative" value="">
+              <input type="checkbox" name="nat20" value="">
               <input type="text" name="name" value="">  
               <input type="number" name="hp" value="">
               <input type="number" name="hpchange" value="">
@@ -52,6 +53,8 @@
         function removeSelectedActors(){}
          
         function resetBoard(){}
+      
+        function toJSON(){}
         
     </script>
   </head>
@@ -59,6 +62,7 @@
     <ul id='actors'></ul>
     <button type="button" name="addActor" onClick='addActor()'>Add Actor</button>
     <button type="button" name="refreshInititive" onClick='sortByInitiative()'>Refresh Inititive</button>
+    <button type="button" name="toJSON" onClick='toJSON()'>Export Encounter</button>
     <button type="button" name="removeSelectedActors" onClick='removeSelectedActors()'>Remove Selected Actors</button>
     <button type="button" name="resetBoard" onClick='resetBoard()'>Reset Board</button>
   </body>
