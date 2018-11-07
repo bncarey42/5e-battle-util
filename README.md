@@ -3,4 +3,4 @@ Utility for tracking initiative and hitpoints in an encounter in D&amp;D 5th Edi
 
 * [Battle Initiative tracker](./battletracker.html)
 
-*can be accessed via [bncarey42.github.io](bncarey42.github.io)
+*can be accessed via [bncarey42.github.io](bncarey42.github.io)*
