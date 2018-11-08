@@ -11,7 +11,22 @@ function addActor() {
   sortByInitiative();
 }
 
+
+
 function createActorBlock(actorIndex) {
+  /*
+  creates the following
+    <span>
+      <input type="checkbox" name="pc" value="">
+      <input type="number" name="initiative" value="">
+      <input type="checkbox" name="nat20" value="">
+      <input type="text" name="name" value="">
+      <input type="number" name="hp" value="">
+      <input type="number" name="hpchange" value="">
+      <button type="button" name="damage" onClick='damage(actorIndex)'>damage</button>
+      <button type="button" name="heal" onClick='heal(actorIndex)'>heal</button>
+    </span>
+  */
   var actor = document.createElement('span');
   actor.setAttribute('id', actorIndex);
   var pc = document.createElement('input');
@@ -51,18 +66,6 @@ function createActorBlock(actorIndex) {
   actor.appendChild(damage);
   actor.appendChild(heal);
 
-  /*
-    <span>
-      <input type="checkbox" name="pc" value="">
-      <input type="number" name="initiative" value="">
-      <input type="checkbox" name="nat20" value="">
-      <input type="text" name="name" value="">
-      <input type="number" name="hp" value="">
-      <input type="number" name="hpchange" value="">
-      <button type="button" name="damage" onClick='damage(actorIndex)'>damage</button>
-      <button type="button" name="heal" onClick='heal(actorIndex)'>heal</button>
-    </span>
-  */
   return actor;
 }
 
