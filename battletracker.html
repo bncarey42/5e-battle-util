@@ -3,60 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Encounter</title>
-    <script>
-        function addActor() {
-          var ul = document.getElementById('actors');
-          var li = document.createElement('li');
-          var ulChildrenCount = Number.isNaN(ul.children.length) ? 0 : ul.children.length;
-          var newActorBlock = createActorBlock(ulChildrenCount);
-          
-          li.setAttribute('id', 'actor'+ ulChildrenCount);
-          li.appendChild(newActorBlock);
-          ul.appendChild(li);
-          sortByInitiative();
-        }
-        
-        function createActorBlock(actorIndex) {
-          /* <span>
-              <input type="checkbox" name="pc" value=""> 
-              <input type="number" name="initiative" value="">
-              <input type="checkbox" name="nat20" value="">
-              <input type="text" name="name" value="">  
-              <input type="number" name="hp" value="">
-              <input type="number" name="hpchange" value="">
-              <button type="button" name="button">damage</button>
-              <button type="button" name="button">heal</button>
-            </span> */
-          return document.createTextNode('actor ' + actorIndex);
-        }
-        
-        function sortByInitiative() {
-          //sort actors in initiative order
-        }
-        
-        function heal(actor) {
-          // get actor
-          // get hp 
-          // get hpTotal
-          // get hpChange
-          //return hpTotal + hpChange 
-        }
-        
-        function damage(actor) {
-          // get actor
-          // get hp 
-          // get hpTotal
-          // get hpChange
-          //return hpTotal - hpChange 
-        }
-      
-        function removeSelectedActors(){}
-         
-        function resetBoard(){}
-      
-        function toJSON(){}
-        
-    </script>
+    <script src="scripts/js/actors.js"></script>
   </head>
   <body onload='addActor()'>
     <ul id='actors'></ul>
