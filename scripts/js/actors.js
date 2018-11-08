@@ -35,11 +35,11 @@ function createActorBlock(actorIndex) {
   var damage = document.createElement('button');
   damage.setAttribute('name','damage');
   damage.appendChild(document.createTextNode('damage'));
-  damage.setAttribute('onClick', damage(actorIndex));
+  damage.setAttribute('onClick', 'damage(actorIndex)');
   var heal = document.createElement('button');
   heal.appendChild(document.createTextNode('heal'));
   heal.setAttribute('name','heal');
-  heal.setAttribute('onClick', heal(actorIndex))
+  heal.setAttribute('onClick', 'heal(actorIndex)');
 
   actor.appendChild(pc);
   actor.appendChild(pc);
@@ -59,10 +59,9 @@ function createActorBlock(actorIndex) {
       <input type="text" name="name" value="">
       <input type="number" name="hp" value="">
       <input type="number" name="hpchange" value="">
-      <button type="button" name="damage">damage</button>
-      <button type="button" name="heal">heal</button>
+      <button type="button" name="damage" onClick='damage(actorIndex)'>damage</button>
+      <button type="button" name="heal" onClick='heal(actorIndex)'>heal</button>
     </span>
-    document.createTextNode('actor ' + actorIndex)
   */
   return actor;
 }
