@@ -1,7 +1,45 @@
+:root{
+  --very-light-gray: #DAD3CE;
+  --light-gray: #5B625E;
+  --gray: #384137;
+  --dark-gray: #374041;
+  --very-dark-gray: #282C2D;
+
+  --cyan: #738F8B;
+  --blue: #617984;
+  --purple: #99879F;
+  --green: #678B70;
+  --red: #885345;
+  --orange: #8B674B;
+  --light-orange: #7D7E69;
+
+  --master-font: 'Eagle Lake', cursive;
+}
+
 * {
-  font-family: 'Share Tech Mono', monospace;
+  background-color: var(--very-dark-gray);
+  color: var(--very-light-gray);
+  font-family: var(--master-font);
 }
 
 ul {
   list-style-type: none;
+}
+
+button {
+  background-color: var(--green);
+  color: var(--very-light-gray);
+  font-family: var(--master-font);
+}
+
+button:hover{
+  background-color: var(--cyan);
+}
+
+li button {
+  background-color: var(--red);
+}
+
+li button:hover {
+  background-color: var(--orange);
 }
