@@ -17,9 +17,9 @@ function createActorBlock(actorIndex) {
   /*
   creates the following
     <span>
-      <input type="checkbox" name="pc" value="">
+      <input type="checkbox" name="select" value="">
       <input type="number" name="initiative" value="">
-      <input type="checkbox" name="nat20" value="">
+
       <input type="text" name="name" value="">
       <input type="number" name="hp" value="">
       <input type="number" name="hpchange" value="">
@@ -35,9 +35,6 @@ function createActorBlock(actorIndex) {
   var initiative = document.createElement('input');
   initiative.setAttribute('type','number');
   initiative.setAttribute('name','initiative');
-  var nat20 = document.createElement('input');
-  nat20.setAttribute('type','checkbox');
-  nat20.setAttribute('name','nat20');
   var name = document.createElement('input');
   name.setAttribute('type','text');
   name.setAttribute('name','name');
@@ -59,7 +56,6 @@ function createActorBlock(actorIndex) {
   actor.appendChild(pc);
   actor.appendChild(pc);
   actor.appendChild(initiative);
-  actor.appendChild(nat20);
   actor.appendChild(name);
   actor.appendChild(hp);
   actor.appendChild(hpChange);
