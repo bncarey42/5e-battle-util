@@ -17,7 +17,7 @@ function createActorBlock(actorIndex) {
   /*
   creates the following
     <span>
-      <input type="checkbox" name="pc" value="">
+      <input type="checkbox" name="select" value="">
       <input type="number" name="initiative" value="">
       <input type="checkbox" name="nat20" value="">
       <input type="text" name="name" value="">
