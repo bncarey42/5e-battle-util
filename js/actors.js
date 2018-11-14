@@ -42,11 +42,11 @@ function createActorBlock(actorIndex) {
   var hp = document.createElement('input');
   hp.setAttribute('type','number');
   hp.setAttribute('name','hp');
-  hp.setAttribute('class','hp');
+  hp.setAttribute('id', actorIndex + 'hp');
   var hpChange = document.createElement('input');
   hpChange.setAttribute('type','number');
   hpChange.setAttribute('name','hpChange');
-  hpChange.setAttribute('class','hpChange');
+  hp.setAttribute('id', actorIndex + 'hpChange');
   var damage = document.createElement('button');
   damage.setAttribute('name','damage');
   damage.appendChild(document.createTextNode('damage'));
@@ -76,15 +76,15 @@ function heal(actor) {
   // get actor
   var actorElm = document.getElementById(actor);
   // get hp
-  var hp = document.querySelector("#" + actor + ".hp").value;
+  var hp = document.getElementById(actor + "hp").value;
   console.log("current hp: " + hp);
   // get hpChange
-  var hpChange = document.querySelector("#" + actor + ".hpChange").value
+  var hpChange = document.getElementById(actor + "hpChange").value
   console.log("damage for: " + hpChange);
   // set hpChange to 0
-  document.querySelector("#" + actor + ".hpChange").value = 0;
+  document.getElementById(actor + "hpChange").value = 0;
   //set hp + hpChange
-  document.querySelector("#" + actor + ".hp").value = hp  + hpChange;
+  document.getElementById(actor + "hp").value = hp  + hpChange;
   updateHPIndicator(actor);
 }
 
@@ -93,15 +93,15 @@ function damage(actor) {
   // get actor
   var actorElm = document.getElementById(actor);
   // get hp
-  var hp = document.querySelector("#" + actor + ".hp").value;
+  var hp = document.getElementById(actor + "hp").value;
   console.log("current hp: " + hp);
   // get hpChange
-  var hpChange = document.querySelector("#" + actor + ".hpChange").value
+  var hpChange = document.getElementById(actor + "hpChange").value
   console.log("damage for: " + hpChange);
   // set hpChange to 0
-  document.querySelector("#" + actor + ".hpChange").value = 0;
+  document.getElementById(actor + "hpChange").value = 0;
   //set hp + hpChange
-  document.querySelector("#" + actor + ".hp").value = hp - hpChange;
+  document.getElementById(actor + "hp").value = hp - hpChange;
   updateHPIndicator(actor);
 }
 
