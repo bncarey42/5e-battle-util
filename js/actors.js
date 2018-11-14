@@ -14,6 +14,7 @@ function addActor() {
 
 
 function createActorBlock(actorIndex) {
+  console.log("building " + actorIndex);
   /*
   creates the following
     <span>
@@ -41,19 +42,20 @@ function createActorBlock(actorIndex) {
   var hp = document.createElement('input');
   hp.setAttribute('type','number');
   hp.setAttribute('name','hp');
+  hp.setAttribute('class','hp');
   var hpChange = document.createElement('input');
   hpChange.setAttribute('type','number');
   hpChange.setAttribute('name','hpChange');
+  hpChange.setAttribute('class','hpChange');
   var damage = document.createElement('button');
   damage.setAttribute('name','damage');
   damage.appendChild(document.createTextNode('damage'));
-  damage.setAttribute('onClick', 'damage(actorIndex)');
+  damage.setAttribute('onClick', 'damage("' + actorIndex + '")');
   var heal = document.createElement('button');
   heal.appendChild(document.createTextNode('heal'));
   heal.setAttribute('name','heal');
-  heal.setAttribute('onClick', 'heal(actorIndex)');
+  heal.setAttribute('onClick', 'heal("' + actorIndex + '")');
 
-  actor.appendChild(pc);
   actor.appendChild(pc);
   actor.appendChild(initiative);
   actor.appendChild(name);
@@ -70,20 +72,40 @@ function sortByInitiative() {
 }
 
 function heal(actor) {
+  console.log("in heal for " + actor);
   // get actor
+  var actorElm = document.getElementById(actor);
   // get hp
-  // get hpTotal
+  var hp = document.querySelector("#" + actor + ".hp").value;
+  console.log("current hp: " + hp);
   // get hpChange
-  //return hpTotal + hpChange
+  var hpChange = document.querySelector("#" + actor + ".hpChange").value
+  console.log("damage for: " + hpChange);
+  // set hpChange to 0
+  document.querySelector("#" + actor + ".hpChange").value = 0;
+  //set hp + hpChange
+  document.querySelector("#" + actor + ".hp").value = hp  + hpChange;
+  updateHPIndicator(actor);
 }
 
 function damage(actor) {
+  console.log("in damage for " + actor);
   // get actor
+  var actorElm = document.getElementById(actor);
   // get hp
-  // get hpTotal
+  var hp = document.querySelector("#" + actor + ".hp").value;
+  console.log("current hp: " + hp);
   // get hpChange
-  //return hpTotal - hpChange
+  var hpChange = document.querySelector("#" + actor + ".hpChange").value
+  console.log("damage for: " + hpChange);
+  // set hpChange to 0
+  document.querySelector("#" + actor + ".hpChange").value = 0;
+  //set hp + hpChange
+  document.querySelector("#" + actor + ".hp").value = hp - hpChange;
+  updateHPIndicator(actor);
 }
+
+function updateHPIndicator(actorIndex){}
 
 function removeSelectedActors(){}
 

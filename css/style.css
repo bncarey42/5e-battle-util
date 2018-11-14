@@ -22,6 +22,10 @@
   font-family: var(--master-font);
 }
 
+#columnsTitle {
+  display: inline;
+}
+
 ul {
   list-style-type: none;
 }
