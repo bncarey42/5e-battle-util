@@ -1,11 +1,10 @@
 function addActor() {
   var ul = document.getElementById('actors');
   var li = document.createElement('li');
-  var ulChildrenCount = Number.isNaN(ul.children.length) ? 0 : ul.children.length;
-  var actorIndex = 'actor'+ ulChildrenCount;
+  var actorIndex = 'actor'+ Number.isNaN(ul.children.length) ? 0 : ul.children.length;
   var newActorBlock = createActorBlock(actorIndex);
 
-  li.setAttribute('id', actorIndex);
+  li.setAttribute('id', 'actorID_' + actorIndex);
   li.appendChild(newActorBlock);
   ul.appendChild(li);
   sortByInitiative();
