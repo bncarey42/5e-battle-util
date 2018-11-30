@@ -30,29 +30,22 @@
   <!-- Script
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/actors.js" type="text/javascript"></script>
-
 </head>
-  <body onload='addActor()'>
-    <!-- Primary Page Layout
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <ul id='actors'>
-      <!--<li>
-        <span>
-          <input type="checkbox" name="select" value="">
-          <input type="number" name="initiative" value="">
-          <input type="checkbox" name="nat20" value="">
-          <input type="text" name="name" value="">
-          <input type="number" name="hp" value="">
-          <input type="number" name="hpchange" value="">
-          <button type="button" name="damage" onClick='damage(actorIndex)'>damage</button>
-          <button type="button" name="heal" onClick='heal(actorIndex)'>heal</button>
-        </span>
-      </li>-->
-    </ul>
-    <button type="button" name="addActor" onClick='addActor()'>Add Actor</button>
-    <button type="button" name="refreshInititive" onClick='sortByInitiative()'>Refresh Inititive</button>
-    <button type="button" name="toJSON" onClick='toJSON()'>Export Encounter</button>
-    <button type="button" name="removeSelectedActors" onClick='removeSelectedActors()'>Remove Selected Actors</button>
-    <button type="button" name="resetBoard" onClick='resetBoard()'>Reset Board</button>
-  </body>
+
+<body onload='addActor()'>
+  <div id="container">
+    <div class="row">
+      <div class="column">
+        <ul id='titles'>
+          <li>Inititive</li>
+          <li>Name</li>
+          <li>Current HP</li>
+          <li>+/- HP</li>
+        </ul>
+        <ul id='actorList'></ul>
+        <button onclick='addActor()'>Add Actor</button>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
