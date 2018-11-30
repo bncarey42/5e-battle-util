@@ -60,7 +60,6 @@ function damage(actorIndex) {
   update.value = 0;
 }
 
-
 //heal character
 function heal(actorIndex) {
   var elm = document.getElementById(actorIndex + 'hp');
