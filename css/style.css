@@ -56,3 +56,7 @@ li button:hover {
 #titles li{
   display: inline;
 }
+
+#actorList input {
+  background-color: var(--very-dark-gray);
+}
