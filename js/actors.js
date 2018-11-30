@@ -1,40 +1,23 @@
+//add new actor
 function addActor() {
-  var ul = document.getElementById('actors');
-  var li = document.createElement('li');
-  var actorIndex = 'actor'+ Number.isNaN(ul.children.length) ? 0 : ul.children.length;
-  var newActorBlock = createActorBlock(actorIndex);
+  var ul = document.getElementById('actorList');
+  var actorIndex = 'actor'+ (Number.isNaN(ul.children.length) ? 0 : ul.children.length);
 
+  var li = document.createElement('li');
+  var newActorBlock = createActorBlock(actorIndex);
   li.setAttribute('id', 'actorID_' + actorIndex);
   li.appendChild(newActorBlock);
   ul.appendChild(li);
+
   sortByInitiative();
 }
 
-
-
+//create new actor
 function createActorBlock(actorIndex) {
-  console.log("building " + actorIndex);
-  /*
-  creates the following
-    <span>
-      <input type="checkbox" name="select" value="">
-      <input type="number" name="initiative" value="">
-
-      <input type="text" name="name" value="">
-      <input type="number" name="hp" value="">
-      <input type="number" name="hpchange" value="">
-      <button type="button" name="damage" onClick='damage(actorIndex)'>damage</button>
-      <button type="button" name="heal" onClick='heal(actorIndex)'>heal</button>
-    </span>
-  */
-  var actor = document.createElement('span');
-  actor.setAttribute('id', actorIndex);
-  var pc = document.createElement('input');
-  pc.setAttribute('type','checkbox');
-  pc.setAttribute('name','pc');
   var initiative = document.createElement('input');
   initiative.setAttribute('type','number');
   initiative.setAttribute('name','initiative');
+  initiative.setAttribute('id','initiative');
   var name = document.createElement('input');
   name.setAttribute('type','text');
   name.setAttribute('name','name');
@@ -45,7 +28,7 @@ function createActorBlock(actorIndex) {
   var hpChange = document.createElement('input');
   hpChange.setAttribute('type','number');
   hpChange.setAttribute('name','hpChange');
-  hp.setAttribute('id', actorIndex + 'hpChange');
+  hpChange.setAttribute('id', actorIndex + 'hpChange');
   var damage = document.createElement('button');
   damage.setAttribute('name','damage');
   damage.appendChild(document.createTextNode('damage'));
@@ -55,7 +38,8 @@ function createActorBlock(actorIndex) {
   heal.setAttribute('name','heal');
   heal.setAttribute('onClick', 'heal("' + actorIndex + '")');
 
-  actor.appendChild(pc);
+  var actor = document.createElement('span');
+
   actor.appendChild(initiative);
   actor.appendChild(name);
   actor.appendChild(hp);
@@ -66,48 +50,33 @@ function createActorBlock(actorIndex) {
   return actor;
 }
 
+//damage character
+function damage(actorIndex) {
+  var elm = document.getElementById(actorIndex + 'hp');
+  var update = document.getElementById(actorIndex + 'hpChange');
+  var staticNum = update.value;
+
+  elm.value = Number(elm.value) - Number(staticNum);
+  update.value = 0;
+}
+
+
+//heal character
+function heal(actorIndex) {
+  var elm = document.getElementById(actorIndex + 'hp');
+  var update = document.getElementById(actorIndex + 'hpChange');
+  var staticNum = update.value;
+
+  elm.value = Number(elm.value) + Number(staticNum);
+  update.value = 0;
+}
+
+//sort actors in initiative order
 function sortByInitiative() {
-  //sort actors in initiative order
+  var actors = document.getElementById('actorList').getElementsByTagName('li');
+  var actorList;
+  for (var actor in actorList) {
+    var initiative = actor.getElementById('initiative');
+    console.log("initiative: " + initiative);
+  }
 }
-
-function heal(actor) {
-  console.log("in heal for " + actor);
-  // get actor
-  var actorElm = document.getElementById(actor);
-  // get hp
-  var hp = document.getElementById(actor + "hp").value;
-  console.log("current hp: " + hp);
-  // get hpChange
-  var hpChange = document.getElementById(actor + "hpChange").value
-  console.log("damage for: " + hpChange);
-  // set hpChange to 0
-  document.getElementById(actor + "hpChange").value = 0;
-  //set hp + hpChange
-  document.getElementById(actor + "hp").value = hp  + hpChange;
-  updateHPIndicator(actor);
-}
-
-function damage(actor) {
-  console.log("in damage for " + actor);
-  // get actor
-  var actorElm = document.getElementById(actor);
-  // get hp
-  var hp = document.getElementById(actor + "hp").value;
-  console.log("current hp: " + hp);
-  // get hpChange
-  var hpChange = document.getElementById(actor + "hpChange").value
-  console.log("damage for: " + hpChange);
-  // set hpChange to 0
-  document.getElementById(actor + "hpChange").value = 0;
-  //set hp + hpChange
-  document.getElementById(actor + "hp").value = hp - hpChange;
-  updateHPIndicator(actor);
-}
-
-function updateHPIndicator(actorIndex){}
-
-function removeSelectedActors(){}
-
-function resetBoard(){}
-
-function toJSON(){}

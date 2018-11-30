@@ -40,10 +40,18 @@ button:hover{
   background-color: var(--cyan);
 }
 
+li {
+  text-align: center;
+}
+
 li button {
   background-color: var(--red);
 }
 
 li button:hover {
   background-color: var(--orange);
+}
+
+#titles li{
+  display: inline;
 }
