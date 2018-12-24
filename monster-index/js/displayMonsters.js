@@ -9,7 +9,6 @@ function build_monster_list(monster_selection) {
 
 function get_monster_list(monster_selection){
   var monsterlist = document.createElement('table')
-  monsterlist.setAttribute('style', 'width=100%; border: 1px solid black;')
   monsterlist.setAttribute('id', 'monster_list')
   monsterlist.appendChild(create_selectors(monster_selection))
   monsterlist.appendChild(this.create_table_header())
