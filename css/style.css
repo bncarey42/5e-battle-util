@@ -52,7 +52,9 @@ li button {
 li button:hover {
   background-color: var(--orange);
 }
-
+#back a {
+  color: var(--very-light-gray);
+}
 #titles li{
   display: inline;
 }
