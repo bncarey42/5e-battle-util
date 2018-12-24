@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
-  <title>monster index</title>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Monster Index</title>
+  <meta name="description" content="">
+  <meta name="author" content="bncarey42">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Eagle+Lake" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/70sDice.png">
+
+  <!-- Script
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src='https://donjon.bin.sh/5e/monsters/monster_data.js'></script>
   <script src='js/displayMonsters.js'></script>
-  <script src='js/filterMonsters.js'></script>
 </head>
-<body onload='build_monster_list(monster_data)' id='body'>
+<body onload='build_monster_list(monster_data)' >
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <div id='main'></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

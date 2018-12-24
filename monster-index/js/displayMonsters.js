@@ -1,5 +1,5 @@
 function build_monster_list(monster_selection) {
-  var body = document.getElementById('body')
+  var body = document.getElementById('main')
   for(mon in monster_selection){
     console.log(JSON.stringify(monster_data[mon]))
   }
@@ -22,9 +22,13 @@ function get_monster_list(monster_selection){
 
 function tableize_monster(monster){
   var data = document.createElement('tr')
-  data.setAttribute('style', 'background-color: lightgrey')
+  data.setAttribute('class', 'monsters')
   var name = document.createElement('td')
-  name.appendChild(document.createTextNode(monster.name))
+  var link = document.createElement('a')
+  link.setAttribute('href', getDnDBeyondUrl(monster.name))
+  link.setAttribute('target', '_blank')
+  link.appendChild(document.createTextNode(monster.name))
+  name.appendChild(link)
   data.appendChild(name)
   var type = document.createElement('td')
   type.appendChild(document.createTextNode(monster.type))
@@ -43,7 +47,7 @@ function tableize_monster(monster){
 
 function create_table_header() {
   var header = document.createElement('tr')
-  header.setAttribute('style', 'background-color: lightgreen')
+  header.setAttribute('class', 'headers')
   var name = document.createElement('th')
   name.appendChild(document.createTextNode('Name'))
   header.appendChild(name)
@@ -63,7 +67,8 @@ function create_table_header() {
 }
 
 function create_selectors(monsters) {
-  var selectors = document.createElement('tr');
+  var selectors = document.createElement('tr')
+  selectors.setAttribute('class', 'selectors')
   selectors.appendChild(document.createElement('td'))
   var typeSelector = document.createElement('td')
   typeSelector.appendChild(this.getTypes(monsters))
@@ -186,10 +191,10 @@ function filter_by_type() {
         monsters[monster] = monster_data[monster]
       }
     }
-    document.getElementById('body').removeChild(document.getElementById('monster_list'))
+    document.getElementById('main').removeChild(document.getElementById('monster_list'))
     build_monster_list(monsters)
   } else {
-    document.getElementById('body').removeChild(document.getElementById('monster_list'))
+    document.getElementById('main').removeChild(document.getElementById('monster_list'))
     build_monster_list(monster_data)
   }
 }
@@ -203,10 +208,10 @@ function filter_by_alignment() {
         monsters[monster] = monster_data[monster]
       }
     }
-    document.getElementById('body').removeChild(document.getElementById('monster_list'))
+    document.getElementById('main').removeChild(document.getElementById('monster_list'))
     build_monster_list(monsters)
   } else {
-    document.getElementById('body').removeChild(document.getElementById('monster_list'))
+    document.getElementById('main').removeChild(document.getElementById('monster_list'))
     build_monster_list(monster_data)
   }
 }
@@ -220,10 +225,10 @@ function filter_by_cr() {
         monsters[monster] = monster_data[monster]
       }
     }
-    document.getElementById('body').removeChild(document.getElementById('monster_list'))
+    document.getElementById('main').removeChild(document.getElementById('monster_list'))
     build_monster_list(monsters)
   } else {
-    document.getElementById('body').removeChild(document.getElementById('monster_list'))
+    document.getElementById('main').removeChild(document.getElementById('monster_list'))
     build_monster_list(monster_data)
   }
 }
@@ -237,10 +242,15 @@ function filter_by_source() {
         monsters[monster] = monster_data[monster]
       }
     }
-    document.getElementById('body').removeChild(document.getElementById('monster_list'))
+    document.getElementById('main').removeChild(document.getElementById('monster_list'))
     build_monster_list(monsters)
   } else {
-    document.getElementById('body').removeChild(document.getElementById('monster_list'))
+    document.getElementById('main').removeChild(document.getElementById('monster_list'))
     build_monster_list(monster_data)
   }
+}
+
+function getDnDBeyondUrl(name){
+  var dashedName = name.replace(/ /g,"-")
+  return 'https://www.dndbeyond.com/monsters/' + dashedName
 }

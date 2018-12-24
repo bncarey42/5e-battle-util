@@ -60,3 +60,17 @@ li button:hover {
 #actorList input {
   background-color: var(--very-dark-gray);
 }
+.selectors td{
+  background-color: var(--green);
+}
+.headers th{
+  background-color: var(--red);
+}
+.monsters td{
+  background-color: var(--very-light-gray);
+  color: var(--dark-gray);
+}
+
+.monsters a {
+  color: var(--dark-gray);
+}
