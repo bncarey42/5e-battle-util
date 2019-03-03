@@ -1,6 +1,6 @@
 class Actor {
   constructor(init, name, currentHP) {
-    this.inititive = init;
+    this.initiative = init;
     this.name = name;
     this.hp = currentHP;
   }
