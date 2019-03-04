@@ -4,9 +4,12 @@ var actors = [];
 function addActor() {
   actors.push(new Actor(uuidv4(),
                         Number(document.getElementById('input_initiative').value),
-                        document.getElementById('input_name').value,
+                               document.getElementById('input_name').value,
                         Number(document.getElementById('input_hp').value)));
   updateActorBlocks();
+  document.getElementById('input_initiative').value = "";
+  document.getElementById('input_name').value = "";
+  document.getElementById('input_hp').value = "";
 }
 
 function updateActorBlocks() {
