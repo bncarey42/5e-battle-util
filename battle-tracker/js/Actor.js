@@ -16,13 +16,12 @@ class Actor {
 
   /*
   <li id='uuid'>
-    <button id='delete()'>D</button>
     <input type='number' id='initiative' readonly/>
     <input type='text' id='name' readonly/>
     <input type='number' id='currentHP' readonly/>
     <input type='number' id='HPChange' />
-    <button id='heal()'>heal</button>
-    <button id='damage()'>damage</button>
+    <button id='heal(actorID)'>heal</button>
+    <button id='damage(actorID)'>damage</button>
   </li>
   */
   createActorBlock() {
@@ -64,22 +63,18 @@ class Actor {
     heal.setAttribute('onClick', 'heal("' + this.index + '")');
 
     if(this.hp <= 0){
-      var del = document.createElement('del');
-      del.appendChild(initiative);
-      del.appendChild(name);
-      del.appendChild(hp);
-      del.appendChild(hpChange);
-      del.appendChild(damage);
-      del.appendChild(heal);
-      li.appendChild(del)
-    } else{
-      li.appendChild(initiative);
-      li.appendChild(name);
-      li.appendChild(hp);
-      li.appendChild(hpChange);
-      li.appendChild(damage);
-      li.appendChild(heal);
+      initiative.setAttribute('style','color:var(--red);');
+      name.setAttribute('style','color:var(--red);');
+      hp.setAttribute('style','color:var(--red);');
+      hpChange.setAttribute('style','color:var(--red);');
     }
+
+    li.appendChild(initiative);
+    li.appendChild(name);
+    li.appendChild(hp);
+    li.appendChild(hpChange);
+    li.appendChild(damage);
+    li.appendChild(heal);
 
     return li;
   }

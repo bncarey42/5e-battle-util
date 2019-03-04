@@ -13,26 +13,27 @@ function updateActorBlocks() {
   actors.sort((a,b) => {
     return b.initiative - a.initiative;
   })
-  console.log(JSON.stringify(actors));
+
   var ul = document.getElementById('actorList');
   ul.innerHTML = '';
+  ul.appendChild(titles())
+
   for(var i = 0; i < actors.length; i++) {
-  //for (var key in actors) {
-    console.log(JSON.stringify(actors[i]));
-    ul.appendChild(titles())
     ul.appendChild(actors[i].createActorBlock());
   }
 }
 
 //damage character
 function damage(actorIndex) {
-  actors[actorIndex].damage(Number(document.getElementById(actorIndex + '_hpChange').value));
+  actors.find((actor) => {return actor.index == actorIndex})
+    .damage(Number(document.getElementById(actorIndex + '_hpChange').value));
   updateActorBlocks();
 }
 
 //heal character
 function heal(actorIndex) {
-  actors[actorIndex].heal(Number(document.getElementById(actorIndex + '_hpChange').value));
+  actors.find((actor) => {return actor.index == actorIndex})
+    .heal(Number(document.getElementById(actorIndex + '_hpChange').value));
   updateActorBlocks();
 }
 
@@ -63,6 +64,7 @@ function titles() {
   li.appendChild(name);
   li.appendChild(hp);
   li.appendChild(hpChange);
-
-  return li;
+  var strong = document.createElement('strong');
+  strong.appendChild(li);
+  return strong;
 }
