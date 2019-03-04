@@ -15,14 +15,14 @@ class Actor {
   }
 
   /*
-  <li id='uuid'>
-    <input type='number' id='initiative' readonly/>
-    <input type='text' id='name' readonly/>
-    <input type='number' id='currentHP' readonly/>
-    <input type='number' id='HPChange' />
-    <button id='heal(actorID)'>heal</button>
-    <button id='damage(actorID)'>damage</button>
-  </li>
+    <li id='uuid'>
+      <input type='number' id='initiative' readonly/>
+      <input type='text' id='name' readonly/>
+      <input type='number' id='currentHP' readonly/>
+      <input type='number' id='HPChange' />
+      <button id='heal(actorID)'>heal</button>
+      <button id='damage(actorID)'>damage</button>
+    </li>
   */
   createActorBlock() {
     var li = document.createElement('li');
