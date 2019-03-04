@@ -24,6 +24,7 @@ class Actor {
       <button id='damage(actorID)'>damage</button>
     </li>
   */
+
   createActorBlock() {
     var li = document.createElement('li');
     li.setAttribute('id', this.index);
