@@ -56,7 +56,7 @@ function titles() {
   var hp = document.createElement('input');
   hp.setAttribute('type','text');
   hp.setAttribute('readonly','true');
-  hp.setAttribute('value', "Name");
+  hp.setAttribute('value', "Current HP");
 
   var hpChange= document.createElement('input');
   hpChange.setAttribute('type','text');
