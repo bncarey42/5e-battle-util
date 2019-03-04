@@ -23,7 +23,6 @@ class Actor {
       <button id='heal(actorID)'>heal</button>
       <button id='damage(actorID)'>damage</button>
     </li>
-  */
   createActorBlock() {
     var li = document.createElement('li');
     li.setAttribute('id', this.index);
