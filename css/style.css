@@ -22,23 +22,18 @@
   font-family: var(--master-font);
 }
 
-
-#columnsTitle {
-  display: inline;
+.container{
+  max-width: 1000px;
 }
+
 
 ul {
   list-style-type: none;
 }
 
 button {
-  background-color: var(--green);
   color: var(--very-light-gray);
   font-family: var(--master-font);
-}
-
-button:hover{
-  background-color: var(--cyan);
 }
 
 li {
@@ -52,16 +47,32 @@ li button {
 li button:hover {
   background-color: var(--orange);
 }
+
 #back a {
   color: var(--very-light-gray);
 }
-#titles li{
-  display: inline;
+
+#titles input{
+  text-align: center;
+  font-size: 110%;
+  outline: none;
+  box-shadow: none;
+  border-color: var(--very-dark-gray);
+  text-shadow: 1px 1px var(--red);
 }
 
-#actorList input {
+.actorUtils input {
   background-color: var(--very-dark-gray);
 }
+
+#actor_input button{
+  background-color: var(--green);
+}
+
+#actor_input button:hover{
+  background-color: var(--cyan);
+}
+
 .selectors td{
   background-color: var(--green);
 }
