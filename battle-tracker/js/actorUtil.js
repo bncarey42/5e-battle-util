@@ -1,8 +1,8 @@
 var actors = [];
-
+var actorIndex = 0;
 //add new actor
 function addActor() {
-  actors.push(new Actor(uuidv4(),
+  actors.push(new Actor('actor_' + actorIndex++,
                         Number(document.getElementById('input_initiative').value),
                                document.getElementById('input_name').value,
                         Number(document.getElementById('input_hp').value)));
