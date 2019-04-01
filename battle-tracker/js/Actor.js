@@ -32,7 +32,6 @@ class Actor {
     var initiative = document.createElement('input');
     initiative.setAttribute('type','number');
     initiative.setAttribute('name', this.index + '_initiative');
-    initiative.setAttribute('readonly','true');
     initiative.setAttribute('value', this.initiative);
 
     var name = document.createElement('input');
@@ -45,7 +44,6 @@ class Actor {
     hp.setAttribute('type','number');
     hp.setAttribute('name','hp');
     hp.setAttribute('id', this.index + 'hp');
-    hp.setAttribute('readonly','true');
     hp.setAttribute('value',this.hp);
 
     var hpChange = document.createElement('input');
