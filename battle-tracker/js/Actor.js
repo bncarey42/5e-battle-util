@@ -33,6 +33,7 @@ class Actor {
     initiative.setAttribute('type','number');
     initiative.setAttribute('name', this.index + '_initiative');
     initiative.setAttribute('value', this.initiative);
+    initiative.setAttribute('onchange' updateActorBlocks());
 
     var name = document.createElement('input');
     name.setAttribute('type','text');
