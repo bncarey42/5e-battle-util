@@ -32,6 +32,7 @@ ul {
 }
 
 button {
+  background-color: var(--purple);
   color: var(--very-light-gray);
   font-family: var(--master-font);
 }
