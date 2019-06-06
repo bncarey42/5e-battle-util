@@ -19,13 +19,14 @@ function cast() {
   result.setAttribute('style', randomColor());
   var lvl = document.getElementById('lvl').value
   var roll = dieOneHundred()
-  console.log(roll +", "+lvl);
 
   if(wildMagic(Number(roll), lvl)) {
-    var surge_text = document.createTextNode(surge(Number(dieOneHundred())))
-    console.log("IT HAPPENS : " + surge_text);
+    var text = surge(Number(dieOneHundred()))
+    var surge_text = document.createTextNode(text)
+    console.log(roll +", "+lvl +" IT HAPPENS : " + text)
     result.appendChild(surge_text)
   } else {
+    console.log(roll +", "+lvl)
     var surge_text = document.createTextNode("Nothing happens")
     result.appendChild(surge_text)
   }
