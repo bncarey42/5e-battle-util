@@ -62,6 +62,12 @@ li button:hover {
   text-shadow: 1px 1px var(--red);
 }
 
+.damage_btn {
+  background-color: var(--red);
+}
+.heal_btn {
+  background-color: var(--green);
+}
 .actorUtils input {
   background-color: var(--very-dark-gray);
 }
