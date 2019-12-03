@@ -14,8 +14,8 @@ Vue.component('actor_row', {
                   '<input type="number" v-model="pc.hp_change">' +
                 '</div>' + 
                 '<div class="three columns">' +
-                  '<button :class="damage_btn" @click=damage>damage</button>' +
-                  '<button :class="heal_btn" @click=heal>heal</button>' +
+                  '<button class="damage_btn" @click=damage>damage</button>' +
+                  '<button class="heal_btn" @click=heal>heal</button>' +
                 '</div>' + 
               '</div>',
     methods: {
