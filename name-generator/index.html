@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+  <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Name Generator</title>
+  <meta name="description" content="">
+  <meta name="author" content="bncarey42">
+
+  <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Eagle+Lake" rel="stylesheet">
+
+  <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/70sDice.png">
+
+  <!-- Script
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+  <div id='back'><a href="../">
+      << back to util list</a>
+  </div>
+  <div class="container" id="nameGen">
+    <div class="row">
+      <div class="six columns">
+        <label for="corpus">Input Source Names Here:</label>
+        <textarea name="corpus" v-model="corpus" id="corpus"></textarea>
+      </div>
+      <div class="six columns">
+        <div class="flex-between">
+          <p>Less Random</p>
+          <div class="flex-grow-2">
+            <input type="range" :min="orderMin" :max="orderMax" v-model="order" class="w-100" />
+          </div>
+          <p>More Random</p>
+        </div>
+        <div class="flex-between">
+          <div>
+            <label for="numNames">Generate <input name="numNames" type="number" id="number-names" v-model="numNames" />
+              names</label>
+          </div>
+          <div>
+            <button id="gen-btn" @click="getNames()">Generate {{Object.keys(graph).length ? 'More':''}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <ul>
+          <li v-for="(name, i) in names" :key="i">{{name}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./js/names.js"></script>
+  <script src="./js/vue.js"></script>
+</body>
+
+</html>
