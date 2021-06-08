@@ -16,7 +16,7 @@
   --master-font: 'Eagle Lake', cursive;
 }
 
-* {
+body {
   background-color: var(--very-dark-gray);
   color: var(--very-light-gray);
   font-family: var(--master-font);
@@ -42,6 +42,10 @@ button {
   background-color: var(--purple);
   color: var(--very-light-gray);
   font-family: var(--master-font);
+}
+
+a {
+  color: var(--cyan)
 }
 
 li {
@@ -118,6 +122,12 @@ li button:hover {
   flex-direction: row;
   width: 100%;
 }
+.flex-end {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -125,7 +135,6 @@ li button:hover {
 .flex-grow-2 {
   flex-grow: 2;
 }
-
 .w-100 {
   width: 100%;
 }
@@ -141,4 +150,63 @@ li button:hover {
 #corpus {
   width: 100%;
   height: 25rem;
+  margin-bottom: 0;
+}
+
+.outline {
+  border:  solid var(--very-light-gray);
+  overflow-x: scroll;
+  padding:1rem;
+}
+
+.rounded {
+  border-radius: 15px;
+}
+
+.lines-hover li {
+  display: flex;
+  align-content: center;
+  padding:0;
+  margin: 0;
+}
+
+.lines-hover li:hover {
+  background-color: var(--light-gray);
+}
+
+.lines-hover li:hover .btn-light {
+  margin: 0;
+  padding: .75rem;
+  background-color: var(--very-light-gray);
+  content: url(../images/copy-regular.svg);
+  height: inherit;
+  color: var(--very-light-gray);
+
+}
+
+.lines-hover :nth-child(even){
+  background-color:var(--dark-gray);
+}
+.btn-light {
+  width: 3rem;
+  color: var(--very-light-gray)
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(.75);
+  }
+  50% {
+    transform: scale(.60)
+  }
+  100% {
+    transform: scale(.75);
+  }
+}
+
+#heart-to-beat {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  animation: heartbeat 1s infinite;
 }

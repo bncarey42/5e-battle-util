@@ -40,6 +40,7 @@
       <div class="six columns">
         <label for="corpus">Input Source Names Here:</label>
         <textarea name="corpus" v-model="corpus" id="corpus"></textarea>
+        <p>NOTE: Each name should be on a new line to account for multi part names</p>
       </div>
       <div class="six columns">
         <div class="flex-between">
@@ -62,9 +63,25 @@
     </div>
     <div class="row">
       <div class="twelve columns">
-        <ul>
-          <li v-for="(name, i) in names" :key="i">{{name}}</li>
-        </ul>
+        <div v-if="loadingNames">
+          <div class="flex-between">
+            <img id="heart-to-beat" src="../images/70sDice.png" alt="dice-loading-animation">
+          </div>
+        </div>
+        <div v-else-if="names.length > 0">
+          <div class="flex-end">
+            <a href="javascript:void(0)" @click="clearNames()">Clear Names</a>
+          </div>
+          <ul class="outline rounded lines-hover">
+            <li v-for="(name, i) in names" :key="i" class="flex-between">
+              <div>{{name}}</div>
+              <!--USING FONT AWESOME 'far fa-copy' ICON IN ITS SVG FORM HERE. NO CHANGE HAS BEEN MADE TO THE ICON. LINK TO LICENSE: https://fontawesome.com/license -->
+              <div>
+                <a href="javascript:void(0)" @click="copyNames([name])" class="btn-light"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
