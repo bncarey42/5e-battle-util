@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
 
   <!-- Basic Page Needs
@@ -27,19 +28,53 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="../images/70sDice.png">
 
+  <!-- VUE
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/vue-select@latest"></script>
+  <link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
+
   <!-- Script
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src='https://donjon.bin.sh/5e/monsters/monster_data.js'></script>
-  <script src='js/displayMonsters.js'></script>
 </head>
-<body onload='build_monster_list(monster_data)' >
-  <div id='back'><a href="../"><< back to util list</a></div>
-  <div class="container">
-    <div class="row">
-      <div class="column">
-        <div id='main'></div>
+
+<body>
+  <div id='back'><a href="../">
+      << back to util list</a>
+  </div>
+  <div class="container" id="monsters">
+    <div class="row bg-green">
+      <div class="three columns header">
+        <p>Name</p>
+      </div>
+      <div class="three columns">
+        <v-select placeholder="Type" :options="['this', 'that', 'the other']" />
+      </div>
+      <div class="two columns">
+        <v-select placeholder="Alignment"></v-select>
+      </div>
+      <div class="two columns">
+        <v-select placeholder="CR"></v-select>
+      </div>
+      <div class="two columns">
+        <v-select placeholder="Source"></v-select>
       </div>
     </div>
+    <!-- <div class="lines-hover">
+      <div class="row" for="monster in filteredMonsters">
+        <div class="three columns">{{monster.name}}</div>
+        <div class="three columns">{{monster.type}}</div>
+        <div class="two columns">{{monster.alignment}}</div>
+        <div class="two columns">{{monster.cr}}</div>
+        <div class="two columns">{{monster.source}}</div>
+      </div>
+    </div> -->
   </div>
+  <div class="center">
+    <p>Monster list from <a href="https://donjon.bin.sh">DonJon</a></p>
+  </div>
+  <script src="./js/vue.js"></script>
 </body>
+
 </html>

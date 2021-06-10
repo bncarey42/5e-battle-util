@@ -248,8 +248,3 @@ function filter_by_source() {
     build_monster_list(monster_data)
   }
 }
-
-function getDnDBeyondUrl(name){
-  var dashedName = name.replace(/ /g,"-")
-  return 'https://www.dndbeyond.com/monsters/' + dashedName
-}

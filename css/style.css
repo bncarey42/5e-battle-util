@@ -90,21 +90,8 @@ li button:hover {
   background-color: var(--cyan);
 }
 
-#monster_list {
-  width: 100%;
-}
-.selectors td{
+.bg-green {
   background-color: var(--green);
-}
-.headers th{
-  background-color: var(--red);
-}
-.monsters td{
-  background-color: var(--very-light-gray);
-  color: var(--dark-gray);
-}
-.monsters a {
-  color: var(--dark-gray);
 }
 
 #wminput {
@@ -209,4 +196,62 @@ li button:hover {
   width: 100px;
   height: 90px;
   animation: heartbeat 1s infinite;
+}
+
+.card {
+  background-color: var(--very-light-gray);
+  color: var(--dark-gray);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.github-banner {
+  position: absolute;
+  width: 25rem;
+  bottom: 6rem;
+  right: -23.5rem;
+  background-color: var(--very-light-gray);
+  height: 2rem;
+  padding: 1rem;
+  border-radius: 5px 0 0 5px;
+  transition: 600ms;
+}
+
+.github-banner:hover {
+  transition: 600ms;
+  transform: translateX(-19rem);
+}
+
+.github-banner-container {
+  height: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: between;
+  margin:auto;
+}
+
+.github-banner-container a {
+  text-decoration: none;
+}
+
+.fa-github {
+  content: url(../images/github-square-brands.svg);
+  height: 2rem;
+  padding-right: 1rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
 }

@@ -50,15 +50,11 @@
           </div>
           <p>More Random</p>
         </div>
-        <div class="flex-between">
-          <div>
-            <label for="numNames">Generate <input name="numNames" type="number" id="number-names" v-model="numNames" />
-              names</label>
-          </div>
-          <div>
-            <button id="gen-btn" @click="getNames()">Generate {{Object.keys(graph).length ? 'More':''}}</button>
-          </div>
-        </div>
+        <label for="numNames" class="w-100">Generate <input name="numNames" type="number" id="number-names"
+            v-model="numNames" />
+          names</label>
+        <button id="gen-btn" class="w-100" @click="getNames()">Generate {{Object.keys(graph).length ?
+          'More':''}}</button>
       </div>
     </div>
     <div class="row">
