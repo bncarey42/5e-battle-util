@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="grid grid-cols-2">
+      <div class="m-4" v-for="app in routes" :key="app.path">
+        <app-card class="h-full bg-opacity-90 bg-yellow-50">
+          <template v-slot:header>
+            <router-link :to="app.path"><h1 class="text-green-900 text-xl hover:underline">{{ app.name }}</h1></router-link>
+          </template>
+          {{ app.description }}
+        </app-card>
+      </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import AppCard from '@/components/AppCard'
+import router from "@/router";
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    AppCard
+  },
+  data: () => {
+    return {
+      routes: []
+    }
+  },
+  created() {
+    let routes = [...router.options.routes];
+    routes.shift();
+    this.routes = routes;
   }
 }
 </script>

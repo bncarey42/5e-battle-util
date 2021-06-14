@@ -1,0 +1,11 @@
+.fa-github {
+    content: url(../images/github-square-brands.svg);
+}
+
+.fa-copy-regular {
+    content: url(../images/copy-regular.svg);
+}
+
+.fa-minus-circle-solid {
+    content: url(../images/minus-circle-solid.svg);
+}
